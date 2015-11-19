@@ -1,0 +1,20 @@
+<!-- Comments partial with lots of code extracted from show.html.erb -->
+
+<p>
+  <strong>Commenter:</strong>
+  <%= comment.commenter %>
+</p>
+ 
+<p>
+  <strong>Comment:</strong>
+  <%= comment.body %>
+</p>
+
+<!--  Clicking this new "Destroy Comment" link will fire off a DELETE 
+  /articles/:article_id/comments/:id to our CommentsController, which 
+  can then use this to find the comment we want to delete -->
+<p>
+  <%= link_to 'Destroy Comment', [comment.article, comment],
+               method: :delete,
+               data: { confirm: 'Are you sure?' } %>
+</p>
